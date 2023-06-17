@@ -1,0 +1,102 @@
+.videoBg {
+    position: fixed;
+    z-index: -1;
+    inset: 50% auto auto 50%;
+    translate: -50% -50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.weather {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    &__title {
+        color: $titleColor;
+        @include fluid-type(320px, 1920px, 30px, 60px);
+        margin: 0 0 40px 0;
+    }
+
+    &__form {
+        width: min(100% - 30px, 550px);
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        margin: 0 0 30px 0;
+    }
+
+    &__gps {
+        flex: 0 0 30px;
+        height: 30px;
+        padding: 4px;
+        background-color: #fff;
+        border: 0;
+        border-radius: 50%;
+        cursor: pointer;
+
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    &__city {
+        flex: 1;
+        padding: 10px;
+        border: none;
+        outline: none;
+        border-radius: 25px;
+
+        &::placeholder {
+            text-align: center;
+        }
+    }
+
+    &__info {
+        display: flex;
+        gap: 20px;
+        background-color: $infoBoxBg;
+        color: $infoBoxTextColor;
+        padding: 20px;
+        border-radius: 15px;
+        align-items: center;
+    }
+
+    &__region,
+    &__details {
+        p {
+            margin: 0 0 5px 0;
+
+            &:last-of-type {
+                margin: 0;
+            }
+        }
+    }
+
+    &__temp {
+        font-size: 60px;
+        display: flex;
+
+        span {
+            font-size: 30px;
+            padding: 6px 0 0 0;
+        }
+    }
+
+    &__error {
+        padding: 10px;
+        border-radius: 5px;
+        background-color: $errorBoxBg;
+        font-weight: 700;
+        color: $errorBoxColor;
+        letter-spacing: 1px;
+    }
+
+    &__loader {
+        display: none;
+    }
+}
